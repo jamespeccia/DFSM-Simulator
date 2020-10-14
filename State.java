@@ -1,8 +1,15 @@
+/*
+ * Name: James Peccia
+ * Course: CS 41000
+ * Email: jpeccia@purdue.edu
+ * Assignment: DFSM Simulator
+ */
+
 import java.util.HashMap;
 
 public class State {
 
-    private HashMap<Character, Integer> paths;
+    private final HashMap<Character, Integer> paths;
     private boolean isActivationState;
 
     public State() {
@@ -14,13 +21,17 @@ public class State {
         this.isActivationState = true;
     }
 
-    public boolean isActivationState() { return this.isActivationState; }
+    public boolean isActivationState() {
+        return this.isActivationState;
+    }
 
     public void addPath(char c, int index) {
         this.paths.put(c, index);
     }
 
-    public int move(char nextCharacter) { return this.paths.get(nextCharacter); }
+    public int move(char nextCharacter) {
+        return this.paths.get(nextCharacter);
+    }
 
     @Override
     public String toString() {
